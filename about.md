@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-![SMASH logo](_includes/smash_logo.png)
+![SMASH logo](https://github.com/SMASHsurvey/smashsurvey.github.io/blob/main/_includes/smash_logo.png)
 
 ### Description
 
