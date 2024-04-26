@@ -1,0 +1,28 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+  #relative_permalinks: true
+
+# Setup
+title:            SMASH
+tagline:          'Survey of the MAgellanic Clouds Stellar History (SMASH)'
+description:      'A Dark Energy Camera survey with the goal of identifying broadly distributed, low surface brightness stellar populations associated with the stellar halos and tidal debris of the Magellanic Clouds.'
+# url:              http://hyde.getpoole.com
+baseurl:          /
+
+author:
+  name:           'Pol Massana'
+  url:            https://pmassana.github.io/
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://github.com/SMASHsurvey/smashsurvey.github.io
+
+plugins: [jekyll-paginate, jekyll-gist]
