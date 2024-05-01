@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-![smash_logo.png](../assets/smash_logo.png "SMASH logo")
+![smash_logo](../assets/smash_logo.png "SMASH logo")
 
 ### Description
 
