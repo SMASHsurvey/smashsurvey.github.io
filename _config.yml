@@ -11,7 +11,7 @@ title:            SMASH
 tagline:          'Survey of the MAgellanic Clouds Stellar History (SMASH)'
 description:      'A Dark Energy Camera survey with the goal of identifying broadly distributed, low surface brightness stellar populations associated with the stellar halos and tidal debris of the Magellanic Clouds.'
 # url:              http://hyde.getpoole.com
-baseurl:          /
+# baseurl:          /
 
 author:
   name:           'Pol Massana'
