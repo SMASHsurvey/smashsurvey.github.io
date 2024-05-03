@@ -59,9 +59,9 @@ galaxy populations.</li>
 </ul>
 
 <a name="SecondDataRelease"></a>
-    <header>
-        <h3>Second Data Release</h3>
-    </header>
+<header>
+    <h3>Second Data Release</h3>
+</header>
 
 The figure below shows the 197 SMASH fields which
 are being publicly released in the second SMASH data release (DR2) which
@@ -87,7 +87,8 @@ includes summary information for each field. Click on  **`smash_dr2`** on the le
     <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.deep">deep</a></b> - Same as object but only using the deepest exposures for each field (357,395,383 rows).</li>
     <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.xmatch">xmatch</a></b> - Crossmatches between SMASH and Gaia DR2, 2MASS and ALLWISE (4,155,114,664 rows).</li>
 </ul>
-    <span class="image featured"><img src="../assets/smash_map_dr2.jpg" alt=""/></span>
+
+<span class="image featured"><img src="../assets/smash_map_dr2.jpg" alt=""/></span>
 
 <a name="MainBodies"></a>
 <header>
@@ -107,9 +108,9 @@ They were presented as a <a href="../assets/smash_poster.jpg">poster</a> at the 
 <span class="image featured"><a href="../assets/smash_smc_small.jpg"><img src="../assets/smash_smc_small.jpg" alt=""/></a></span>
 
 <a name="DataReduction"></a>
-        <header>
-            <h3>Data Reduction and Calibration</h3>
-        </header>
+<header>
+    <h3>Data Reduction and Calibration</h3>
+</header>
 
 The SMASH data reduction of the DECam data makes use of three separate software packages: (1) the Community
 Pipeline for instrument signature removal, (2) PHOTRED
@@ -130,7 +131,7 @@ multiple images, forced PSF photometry across multiple exposures using a master 
 detection from a deep multi-band "detection" stack (ALLFRAME), aperture corrections, and dereddening. PHOTRED
 was run on each nightly separately after the CP-reduced images were pre-processed using the `SMASHRED_PREP.PRO` script.
 The precision of the photometry for bright stars is ~1% in <i>u</i> and 0.5-0.7% in <i>griz</i>.
-            <p></p>
+<p></p>
 <b><u>Calibration:</u></b>
 Since most of the SMASH data are in disconnected "island" fields and little prior <i>ugriz</i> data exists in the
 southern sky, we used traditional techniques of calibrating our data with observations of standard star fields

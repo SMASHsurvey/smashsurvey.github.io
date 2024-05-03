@@ -23,6 +23,6 @@ paginate:         5
 version:          1.0.0
 
 github:
-  repo:           https://github.com/SMASHsurvey/smashsurvey.github.io
+  repo:           https://github.com/SMASHsurvey/
 
 plugins: [jekyll-paginate, jekyll-gist]
