@@ -289,7 +289,7 @@ console.log(mapvar);
                             [84.85667159559746,   -73.92752505339423,  "../assets/sfh_lmc/solution_232.png"] ];
 
     document.getElementById("map").addEventListener("click", function (event) {
-        // var contentvar = document.getElementById("map")
+        var contentvar = document.getElementById("map")
         // [0].children[0]
         // console.log(contentvar.clientX);
         // console.log(contentvar.pageX);
