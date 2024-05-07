@@ -3,10 +3,18 @@ layout: page
 title: LMC Star Formation Histories
 ---
 
+<!-- <script>
+// var sidebarvar = document.getElementsByClassName("sidebar")
+var contentvar = document.getElementsByClassName("content container")
+console.log(contentvar);
+</script> -->
 
 <head>
-    <title>SMASH Interactive Map</title>
+    <title>SMASH LMC SFH Interactive Map</title>
 </head>
+
+Click on the map regions to show the star formation history (SFH) results for each of them.
+
 <body>
     <style>
         #hess {
@@ -21,6 +29,12 @@ title: LMC Star Formation Histories
         <img id="hess" src="../assets/sfh_lmc/solution_1.png" width="1500" height="500" ><br>
         <div id="pixel"></div>
     </div>
+
+<!-- <script>
+// var sidebarvar = document.getElementsByClassName("sidebar")
+var mapvar = document.getElementById("map")
+console.log(mapvar);
+</script> -->
 
 <script>
     function get_lon_lat(screenX, screenY) {
@@ -275,10 +289,16 @@ title: LMC Star Formation Histories
                             [84.85667159559746,   -73.92752505339423,  "../assets/sfh_lmc/solution_232.png"] ];
 
     document.getElementById("map").addEventListener("click", function (event) {
-        click_lonlat = get_lon_lat(event.pageX, event.pageY);
+        // var contentvar = document.getElementById("map")
+        // [0].children[0]
+        // console.log(contentvar.clientX);
+        // console.log(contentvar.pageX);
+        click_lonlat = get_lon_lat(event.pageX-contentvar.offsetLeft, event.pageY-contentvar.offsetTop);
 
         out_str = event.pageX + " " + event.pageY + " " + click_lonlat[0] + " " + click_lonlat[1];
         document.getElementById("pixel").innerHTML = out_str;
+        // out_str = event.clientX + " " + event.clientY + " " + click_lonlat[0] + " " + click_lonlat[1];
+        // document.getElementById("pixel").innerHTML = out_str;
 
         cmd = document.getElementById("hess")
         for(var i=0; i<click_centers.length; i++) {
