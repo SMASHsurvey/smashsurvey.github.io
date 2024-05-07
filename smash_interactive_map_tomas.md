@@ -295,7 +295,7 @@ console.log(mapvar);
         // console.log(contentvar.pageX);
         click_lonlat = get_lon_lat(event.pageX-contentvar.offsetLeft, event.pageY-contentvar.offsetTop);
 
-        out_str = event.pageX + " " + event.pageY + " " + click_lonlat[0] + " " + click_lonlat[1];
+        out_str = event.pageX-contentvar.offsetLeft + " " + event.pageY-contentvar.offsetTop + " " + click_lonlat[0] + " " + click_lonlat[1];
         document.getElementById("pixel").innerHTML = out_str;
         // out_str = event.clientX + " " + event.clientY + " " + click_lonlat[0] + " " + click_lonlat[1];
         // document.getElementById("pixel").innerHTML = out_str;
