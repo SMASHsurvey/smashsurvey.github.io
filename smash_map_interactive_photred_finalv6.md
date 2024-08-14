@@ -27,10 +27,10 @@ Click on the map regions to show the color-magnitude diagram (CMD) for each of t
 
 <script>
     function get_lon_lat(screenX, screenY) {
-        minX = 100;
-        maxX = 990;
-        minY = 24;
-        maxY = 639;
+        minX = 90;
+        maxX = 981;
+        minY = 87;
+        maxY = 702;
 
         min_lon = 80;
         max_lon = -35;
