@@ -3,35 +3,147 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<p><img src="../assets/smash_logo.png" alt="smash_logo" title="SMASH logo" /></p>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<header>
+<h3 id="description">Description</h3>
+</header>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+<p>The Survey of the Magellanic Stellar History (SMASH) used the Dark Energy Camera (DECam) to map 480 square degrees of sky to depths of ugriz~24th mag with the goal of identifying broadly distributed, low surface brightness stellar populations associated with the stellar halos and tidal debris of the Magellanic Clouds. It contains measurements of approximately 360 million objects distributed in discrete fields spanning an area of about 2400 square degrees. The first data release (DR1) contained ~100 million objects from 61 observed fields, while the second data release contains all 360 million objects in 197 fields. Browse these pages to learn more about SMASH and to access the data. The <a href="https://ui.adsabs.harvard.edu/abs/2017AJ....154..199N/abstract">SMASH overview paper</a> (Nidever et al. 2017) describes the survey in detail, including its goals, survey strategy, reduction, and calibration.</p>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<p>The <strong><code>smash_dr2.object</code></strong> table has been crossmatched against some reference datasets (except SDSS due to 0 matches) within a 1.5 arcsec radius, nearest neighbor only. These tables will appear with <strong>x1p5</strong> in their name in our table browser. 
+  Example: <a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.x1p5__object__gaia_dr3__gaia_source"><code>smash_dr2.x1p5__object__gaia_dr3__gaia_source</code></a>.</p>
+
+<div class="dlpage">
+    <table border=1>
+        <tr><th colspan="2"><b>SMASH at a Glance</b></th></tr>
+        <tr><td>Area covered</td><td>480 deg<sup>2</sup> spanning ~2400 deg<sup>2</sup></td></tr>
+        <tr><td>Bands</td><td><i>ugriz</i></td></tr>
+        <tr><td>Depth (5&sigma;, <i>ugriz</i>)</td><td>23.9, 24.8, 24.5, 24.2, 23.5 mag</td></tr>
+        <tr><td>Seeing (<i>ugriz</i>)</td><td>1.22, 1.13, 1.01, 0.95, 0.90 arcsec</td></tr>
+        <tr><td>Number of fields</td><td>197</td></tr>
+        <tr><td>Number of DECam exposures</td><td>5,982</td></tr>
+        <tr><td>Number of objects</td><td>360,201,921</td></tr>
+        <tr><td>Number of measurements</td><td>4,155,114,664</td></tr>
+        <tr><td>Photometric precision</td><td>~1% in <i>u</i> and 0.5-0.7% in <i>griz</i></td></tr>
+        <tr><td>Photometric calibraton accuracy</td><td>~1.3% in all bands</td></tr>
+        <tr><td>Astrometric accuracy</td><td>~20 mas</td></tr>
+        </table>
+    </div>
+
+<p><a name="Goals"></a></p>
+<header>
+                <h3>Goals</h3>
+</header>
+
+<p>Using old main sequence stars as tracers, SMASH is revealing the relics of the formation and past
+  interactions of the Clouds down to surface brightnesses equivalent to Σ<sub>g</sub>=35
+  mags arcsec<sup>2</sup>. The main project goals are:</p>
+  <ul>
+      <li><b>Search for the stellar component of the Magellanic Stream and Leading Arm</b>.
+  The detection of stellar debris in these structures would make them the only
+  tidal streams with known gaseous and stellar components in the Local Group.
+  This would not only be invaluable for understanding the history and observable
+  consequences of the Magellanic interaction, but would give us a dynamical tracer
+  of the MW's dark halo and a way to probe the MW's hot halo gas via ram pressure effects.</li>
+      <li><b>Detect and map the smooth components of the Clouds</b>, including their extended
+  disks and potential stellar halos.  The size of the LMC's stellar disk is a direct
+  probe of the tidal radius of the LMC, with which we can explore the dark matter
+  halos of the LMC and MW.</li>
+      <li><b>Detect and map potential streams and substructure in the Magellanic periphery
+  not associated with HI features</b>.  These would probe stages in the formation and
+  interaction of the Clouds at times earlier than the HI dissipation timescale.</li>
+      <li><b>Derive spatially resolved, precise star formation histories</b> covering all ages
+  of the MCs and to large radii, thus providing detailed information on their
+  complete evolution.</li>
+      <li><b>Enable many community-led projects</b>, including studies involving the LMC/SMC
+  main bodies, Galactic structure, discovery of variable objects, and background
+  galaxy populations.</li>
+  </ul>
+  
+  <p><a name="SecondDataRelease"></a></p>
+  <header>
+      <h3>Second Data Release</h3>
+  </header>
+  
+  <p>The figure below shows the 197 SMASH fields which
+  are being publicly released in the second SMASH data release (DR2) which
+  contains ~4 billion measurements of ~360 million
+  objects in fields sampling the ~2400 deg<sup>2</sup> region of the
+  SMASH survey (green hexagons in the figure below).  The main data access is through
+  the Astro Data Lab.  Access and
+  exploration tools include a custom <a href="https://datalab.noirlab.edu/discovery.php">Data Discovery tool</a>,
+  database access to the catalog (via direct query or TAP service), an image cutout service, and a Jupyter notebook server with
+  <a href="https://datalab.noirlab.edu/analysis.php">example notebooks</a> for exploratory analysis.</p>
+  <p></p>
+  <p></p>
+  <p><b><u>Database:</u></b> There are seven SMASH DR2 tables in the database: field, exposure, chip, source, object,
+  deep and xmatch.  The “field” table
+  includes summary information for each field. Click on  <strong><code>smash_dr2</code></strong> on the left-side of the Data Lab
+  <a href="https://datalab.noirlab.edu/query.php">Query Interface</a> to browse the schema and columns.</p>
+  <ul>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.field">field</a></b> - Information on each field (197 rows).</li>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.exposure">exposure</a></b> - Information on each exposure (5,982 rows).</li>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.chip">chip</a></b> - Information on each chip image (359,393 rows).</li>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.source">source</a></b> - All of the individual source measurements (4,155,114,664 rows).</li>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.object">object</a></b> - Average values for each unique object (360,201,921 rows).</li>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.deep">deep</a></b> - Same as object but only using the deepest exposures for each field (357,395,383 rows).</li>
+      <li><b><a href="https://datalab.noirlab.edu/query.php?name=smash_dr2.xmatch">xmatch</a></b> - Crossmatches between SMASH and Gaia DR2, 2MASS and ALLWISE (4,155,114,664 rows).</li>
+  </ul>
+  
+  <p><span class="image featured"><img src="../assets/smash_map_dr2.jpg" alt="" /></span></p>
+  
+  <p><a name="MainBodies"></a></p>
+  <header>
+          <h3>Main Bodies</h3>
+  </header>
+  
+  <p>DR2 contains the first release of SMASH data from the central regions of “main bodies” of the Large and Small
+  Magellanic Clouds.  There are 1177 exposures in 68 contiguous SMASH fields of the LMC covering 15 deg x 18.5 deg.  25 fields
+  have deep exposure while 43 only have shallow (~60 sec) exposures.  There are 412 exposures in 13 deep contiguous SMASH
+  fields of the SMC covering 8.5 deg x 7.4 deg. Three color mosaics are shown below (click on them for a zoomable view).
+  They were presented as a <a href="../assets/smash_poster.jpg">poster</a> at the ESO workshop
+  <a href="https://www.eso.org/sci/meetings/2019/magellanic_clouds.html">A synoptic view of the Magellanic Clouds:
+      VMC, Gaia and beyond</a> in Garching, Germany on September 9-13, 2019.
+              &lt;p&gt;&lt;/p&gt;</p>
+  
+  <p><span class="image featured"><a href="../assets/smash_lmc_small.jpg"><img src="../assets/smash_lmc_small.jpg" alt="" /></a></span>
+  <span class="image featured"><a href="../assets/smash_smc_small.jpg"><img src="../assets/smash_smc_small.jpg" alt="" /></a></span></p>
+  
+  <p><a name="DataReduction"></a></p>
+  <header>
+      <h3>Data Reduction and Calibration</h3>
+  </header>
+  
+  <p>The SMASH data reduction of the DECam data makes use of three separate software packages: (1) the Community
+  Pipeline for instrument signature removal, (2) PHOTRED
+  for PSF photometry, and (3) <a href="https://github.com/dnidever/SMASHRED">SMASHRED</a>, custom software
+  written for PHOTRED pre- and post-processing of the SMASH data.</p>
+  <p></p>
+  <p><b><u>Instrument Signature Removal:</u></b>
+  The <a href="https://noirlab.edu/science/sites/default/files/media/archives/presentations/scipresentation0163-en.pdf">NOIRLab DECam Community Pipeline</a>
+  (Valdes et al. 2014) was jointly developed by the Dark Energy Survey Data Management (DESDM) team and NOIRLab
+  to produce reduced images for the community.  The CP performs bias and crosstalk correction, masking of bad pixels
+  and other artifacts, linearity correction, flat field and illumination calibration, fringe pattern subtraction,
+  astrometric and photometric calibration, sky pattern subtraction, remapping and coaddition.</p>
+  <p></p>
+  <p><b><u>PSF Photometry:</u></b> <a href="https://github.com/dnidever/PHOTRED">PHOTRED</a> is an automated and
+  robust PSF photometry pipeline based on the DAOPHOT suite of programs (Stetson 1987, 1994).
+  It performs WCS fitting, single-image PSF photometry (ALLSTAR), source matching across
+  multiple images, forced PSF photometry across multiple exposures using a master source list created from iterative
+  detection from a deep multi-band “detection” stack (ALLFRAME), aperture corrections, and dereddening. PHOTRED
+  was run on each nightly separately after the CP-reduced images were pre-processed using the <code>SMASHRED_PREP.PRO</code> script.
+  The precision of the photometry for bright stars is ~1% in <i>u</i> and 0.5-0.7% in <i>griz</i>.</p>
+  <p></p>
+  <p><b><u>Calibration:</u></b>
+  Since most of the SMASH data are in disconnected “island” fields and little prior <i>ugriz</i> data exists in the
+  southern sky, we used traditional techniques of calibrating our data with observations of standard star fields
+  (on photometric nights; SDSS equatorial fields) and extra calibration exposures (for non-photometric nights)
+  from the CTIO 0.9m telescope.
+  The DECam standard star field exposures were processed with STDRED, a sister package to PHOTRED, which works in
+  a similar manner.  Then, custom software (<code>SOLVE_TRANSPHOT.PRO</code>) was used to derive the photometric transformation
+  equations for all of the DECam standard star field data combined.  Finally, the DECam science data were calibrated
+  using custom SMASH software (<code>SMASHRED_CALIBRATE_FIELD.PRO</code>) that ties all chip data for a given field onto the same
+  photometric zero-point (via overlaps) using an ubercal technique and calibrates the zero-point using the
+  DECam transformation equations for photometric nights or the 0.9m data for non-photomeric nights.
+  The accuracy of the photometric calibration is ~1.3% in all bands.</p>

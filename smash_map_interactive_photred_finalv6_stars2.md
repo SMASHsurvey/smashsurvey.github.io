@@ -1,8 +1,7 @@
 ---
 layout: page
-title: SMASH CMD interactive maps (stars)
+title: SMASH CMD maps (stars)
 ---
-
 
 
 <head>
@@ -30,8 +29,8 @@ Click on the map regions to show the color-magnitude diagram (CMD) for each of t
     function get_lon_lat(screenX, screenY) {
         minX = 90;
         maxX = 981;
-        minY = 87;
-        maxY = 702;
+        minY = 6;
+        maxY = 621;
 
         min_lon = 80;
         max_lon = -35;
