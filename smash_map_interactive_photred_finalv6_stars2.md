@@ -26,19 +26,19 @@ Click on the map regions to show the color-magnitude diagram (CMD) for each of t
     </div>
 
 <script>
-    function get_lon_lat(screenX, screenY) {
-        minX = 90;
-        maxX = 981;
-        minY = 6;
-        maxY = 621;
+    function get_lon_lat(pageX, pageY) {
+        minX = 88;
+        maxX = 954;
+        minY = 15;
+        maxY = 614;
 
         min_lon = 80;
         max_lon = -35;
         min_lat = 40;
         max_lat = -40;
 
-        click_lon = min_lon + (screenX - minX)*(max_lon - min_lon)/(maxX - minX); 
-        click_lat = min_lat + (screenY - minY)*(max_lat - min_lat)/(maxY - minY);
+        click_lon = min_lon + (pageX - minX)*(max_lon - min_lon)/(maxX - minX); 
+        click_lat = min_lat + (pageY - minY)*(max_lat - min_lat)/(maxY - minY);
         return [click_lon, click_lat];
 
     };
@@ -245,15 +245,20 @@ Click on the map regions to show the color-magnitude diagram (CMD) for each of t
 
     document.getElementById("map").addEventListener("click", function (event) {
         var contentvar = document.getElementById("map")
+        var rect = contentvar.getBoundingClientRect()
         // [0].children[0]
         // console.log(contentvar.clientX);
         // console.log(contentvar.pageX);
-        click_lonlat = get_lon_lat(event.pageX-contentvar.offsetLeft, event.pageY-contentvar.offsetTop);
-
-        out_str = event.pageX-contentvar.offsetLeft + " " + event.pageY-contentvar.offsetTop + " " + click_lonlat[0] + " " + click_lonlat[1];
-        document.getElementById("pixel").innerHTML = out_str;
+        click_lonlat = get_lon_lat(event.clientX-rect.left, event.clientY-rect.top);
+        x = event.clientX-rect.left
+        y = event.clientY-rect.top
+  
+        out_str = x + " " + y + " " + click_lonlat[0] + " " + click_lonlat[1];
+        // out_str = event.pageX-contentvar.offsetLeft + " " + event.pageY-contentvar.offsetTop + " " + click_lonlat[0] + " " + click_lonlat[1];
+        // document.getElementById("pixel").innerHTML = out_str;
         // out_str = event.clientX + " " + event.clientY + " " + click_lonlat[0] + " " + click_lonlat[1];
         // document.getElementById("pixel").innerHTML = out_str;
+        // console.log()
 
         cmd = document.getElementById("hess")
         for(var i=0; i<click_centers.length; i++) {
