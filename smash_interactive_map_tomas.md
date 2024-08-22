@@ -38,15 +38,15 @@ console.log(mapvar);
 
 <script>
     function get_lon_lat(screenX, screenY) {
-        minX = 97;
+        minX = 88;
         maxX = 791;
-        minY = 738;
-        maxY = 29;
+        minY = 20;
+        maxY = 729;
 
         min_lon = 93.0;
         max_lon = 69.75;
-        min_lat = -74.35;
-        max_lat = -65.0;
+        min_lat = -65.0;
+        max_lat = -74.35;
 
         click_lon = min_lon + (screenX - minX)*(max_lon - min_lon)/(maxX - minX); 
         click_lat = min_lat + (screenY - minY)*(max_lat - min_lat)/(maxY - minY);
@@ -290,15 +290,20 @@ console.log(mapvar);
 
     document.getElementById("map").addEventListener("click", function (event) {
         var contentvar = document.getElementById("map")
+        var rect = contentvar.getBoundingClientRect()
         // [0].children[0]
         // console.log(contentvar.clientX);
         // console.log(contentvar.pageX);
-        click_lonlat = get_lon_lat(event.pageX-contentvar.offsetLeft, event.pageY-contentvar.offsetTop);
-
-        out_str = event.pageX-contentvar.offsetLeft + " " + event.pageY-contentvar.offsetTop + " " + click_lonlat[0] + " " + click_lonlat[1];
+        click_lonlat = get_lon_lat(event.clientX-rect.left, event.clientY-rect.top);
+        x = event.clientX-rect.left
+        y = event.clientY-rect.top
+  
+        out_str = x + " " + y + " " + click_lonlat[0] + " " + click_lonlat[1];
+        // out_str = event.pageX-contentvar.offsetLeft + " " + event.pageY-contentvar.offsetTop + " " + click_lonlat[0] + " " + click_lonlat[1];
         document.getElementById("pixel").innerHTML = out_str;
         // out_str = event.clientX + " " + event.clientY + " " + click_lonlat[0] + " " + click_lonlat[1];
         // document.getElementById("pixel").innerHTML = out_str;
+        // console.log()
 
         cmd = document.getElementById("hess")
         for(var i=0; i<click_centers.length; i++) {

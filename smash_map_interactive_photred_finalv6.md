@@ -267,7 +267,7 @@ Click on the map regions to show the color-magnitude diagram (CMD) for each of t
             target_img = click_centers[i][2];
             dist = Math.pow(click_lonlat[0] - target_lon,2) +
                 Math.pow(click_lonlat[1] - target_lat,2);
-            if(dist < 0.3) {
+            if(dist < 0.7) {
 
                 cmd.style.display = "block";
                 if(event.pageX >  20000) {
